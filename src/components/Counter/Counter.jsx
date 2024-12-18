@@ -4,7 +4,7 @@ export class Counter extends React.Component {
     constructor() {
         super()
         // this.contador = 0;
-        this.state = { contador: 0 }
+        this.state = { contador: 0, name: '', password: '' };
     }
 
     render() {
@@ -29,6 +29,26 @@ export class Counter extends React.Component {
                         Aumentar
                     </button>
                 </div>
+
+                <form style={{ marginTop: '40px' }}>
+                    <input
+                        type="text"
+                        placeholder="Nome"
+                        value={this.state.name}
+                        onChange={(event) => {
+                            this.setState({name: event.target.value}); // Pega o que o usuário digitar e coloca em name.
+                        }}
+                    />
+                    <input
+                        type="password"
+                        placeholder="Senha"
+                        value={this.state.password}
+                        onChange={(event) => {
+                            this.setState({password: event.target.value})
+                        }}
+                    />
+                    <button>Enviar</button>
+                </form>
             </div>
         );
     }
