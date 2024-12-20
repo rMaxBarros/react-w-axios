@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect, useState } from "react";
 
 import './styles/App.css';
 import { Navbar } from "./components/Navbar/Navbar";
@@ -8,51 +8,49 @@ import article1Img from "./assets/images/article-1.jpg";
 import article2Img from "./assets/images/article-2.jpg";
 import article3Img from "./assets/images/article-3.jpg";
 import { Counter } from "./components/Counter/Counter";
-// import { Counter } from "./components/Counter/Counter";
 
-// Componente em classe é uma classe que herda a classe Component do React, e retorna HTML dentro do método render.
+function App() {
+  const [news, setNews] = useState([]);
+  
+  useEffect(() => {
+    
+  }, []);
 
-// Componente funcional é uma função que retorna HTML.
+  return (
+    <>
+      <Navbar />
 
-class App extends React.Component {
-  // Método responsável por renderizar o conteúdo HTML do nosso componente.
-  render() {
-    return (
-      <>
-        <Navbar />
+      {/* <Counter /> */}
 
-        <Counter />
-
-
-        {/* <section id="articles">
-          <Article
-            thumbnail={article1Img}
-            title="Designing Dashboards"
-            provider="NASA"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora cumque, quibusdam veniam esse quo iusto numquam blanditiis delectus incidunt at. Officiis harum quos quidem reprehenderit aliquid facilis iste ea modi."
-          />
-          <Article
-            thumbnail={article2Img}
-            title="Vibrant Portraits of 2020"
-            provider="SpaceNews"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora cumque, quibusdam veniam esse quo iusto numquam blanditiis."
-          />
-          <Article
-            thumbnail={article3Img}
-            title="36 Days of Malayalam type"
-            provider="Spacefligh Now"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora cumque, quibusdam veniam esse quo iusto numquam blanditiis delectus incidunt at. Officiis harum quos quidem reprehenderit aliquid facilis iste."
-          />
-          <Article
-            thumbnail={article1Img}
-            title="Designing Dashboards"
-            provider="NASA"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora cumque, quibusdam veniam esse quo iusto numquam blanditiis delectus incidunt at. Officiis harum quos quidem reprehenderit aliquid facilis iste ea modi."
-          />
-        </section> */}
-      </>
-    );
-  }
+      <section id="articles">
+        <Article
+          thumbnail={article1Img}
+          title="Designing Dashboards"
+          provider="NASA"
+          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora cumque, quibusdam veniam esse quo iusto numquam blanditiis delectus incidunt at. Officiis harum quos quidem reprehenderit aliquid facilis iste ea modi."
+        />
+        <Article
+          thumbnail={article2Img}
+          title="Vibrant Portraits of 2020"
+          provider="SpaceNews"
+          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora cumque, quibusdam veniam esse quo iusto numquam blanditiis."
+        />
+        <Article
+          thumbnail={article3Img}
+          title="36 Days of Malayalam type"
+          provider="Spacefligh Now"
+          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora cumque, quibusdam veniam esse quo iusto numquam blanditiis delectus incidunt at. Officiis harum quos quidem reprehenderit aliquid facilis iste."
+        />
+        <Article
+          thumbnail={article1Img}
+          title="Designing Dashboards"
+          provider="NASA"
+          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora cumque, quibusdam veniam esse quo iusto numquam blanditiis delectus incidunt at. Officiis harum quos quidem reprehenderit aliquid facilis iste ea modi."
+        />
+      </section>
+    </>
+  );
 }
+
 
 export default App;
